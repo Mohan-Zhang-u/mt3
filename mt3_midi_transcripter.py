@@ -112,8 +112,9 @@ class InferenceModel(object):
         else:
             raise ValueError("unknown model_type: %s" % model_type)
 
-        gin_files = ["{GIN_FILES_PATH}/model.gin", f"{GIN_FILES_PATH}/{model_type}.gin"]
-
+        gin_files = [f"{GIN_FILES_PATH}/model.gin", f"{GIN_FILES_PATH}/{model_type}.gin"]
+        
+        
         self.batch_size = 8
         self.outputs_length = 1024
         self.sequence_length = {
