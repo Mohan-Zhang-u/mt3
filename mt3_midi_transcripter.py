@@ -323,9 +323,9 @@ for file_path in get_things_in_loc(SOURCE_PATH, just_files=True, endswith=['.wav
     print(file_path)
     
 
-    # process data
+    fs = open(file_path, 'rb').read()
     audio = note_seq.audio_io.wav_data_to_samples_librosa(
-            file_path, sample_rate=SAMPLE_RATE
+            fs, sample_rate=SAMPLE_RATE
         )
     # note_seq.notebook_utils.colab_play(audio, sample_rate=SAMPLE_RATE)
 
